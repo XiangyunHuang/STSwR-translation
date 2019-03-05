@@ -44,8 +44,8 @@ addons:
       - libgdal-dev
 
 before_install:
-#  - nvm install stable
-#  - npm install netlify-cli -g
+  - nvm install stable
+  - npm install netlify-cli -g
 #  - curl -fLo /tmp/tinytex.tar.gz https://travis-bin.yihui.name/tinytex.tar.gz
 #  - tar -xzf /tmp/tinytex.tar.gz -C $HOME
 #  - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH

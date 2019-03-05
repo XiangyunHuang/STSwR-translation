@@ -40,3 +40,6 @@ _book/
 _bookdown_files/
 packages.bib
 STSwR-translation.rds
+
+# MacOS
+.DS_Store
