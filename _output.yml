@@ -5,7 +5,8 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Spatio-Temporal Statistics with R</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="https://www.netlify.com" target="blank">Published with netlify</a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Written with bookdown</a></li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
