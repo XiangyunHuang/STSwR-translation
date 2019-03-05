@@ -1,0 +1,69 @@
+language: r
+r:
+  - 3.5.2
+
+dist: xenial
+sudo: true
+
+cache:
+  packages: true
+  directories:
+    - _bookdown_files
+    - $HOME/.npm
+    
+latex: false
+branches:
+  only:
+    - master
+    - release
+    - stable
+
+pandoc_version: 2.3.1
+
+git:
+  depth: 5
+  submodules: false
+  
+repos:
+  CRAN: https://cloud.r-project.org
+
+addons:
+  apt:
+    sources:
+      - sourceline: ppa:opencpu/imagemagick
+      - sourceline: ppa:git-core/ppa
+    packages:
+      - ghostscript
+      - imagemagick
+      - optipng
+      # git2r
+      - libgit2-dev
+      # for sf rgdal
+      - libudunits2-dev
+      - libproj-dev
+      - libgeos-dev
+      - libgdal-dev
+
+before_install:
+#  - nvm install stable
+#  - npm install netlify-cli -g
+#  - curl -fLo /tmp/tinytex.tar.gz https://travis-bin.yihui.name/tinytex.tar.gz
+#  - tar -xzf /tmp/tinytex.tar.gz -C $HOME
+#  - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
+#  - tlmgr install $(cat latex/TeXLive.pkgs | tr '\n' ' ') || true
+
+  
+before_script:
+ # - Rscript -e 'tinytex::tlmgr_install(readLines("latex/TeXLive.pkgs"))'
+  - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE)'
+
+script:
+  - Rscript -e 'bookdown::render_book("index.Rmd")'
+
+
+deploy:
+  - provider: script
+    script: netlify deploy --prod --dir _book
+    skip_cleanup: true
+    on:
+      branch: master
