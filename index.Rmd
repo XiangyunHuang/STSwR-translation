@@ -5,7 +5,7 @@ author:
   - 黄湘云
   - 朱俊辉
   - 壮士
-date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), tz = 'Asia/Taipei', usetz = TRUE)`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
