@@ -3,7 +3,6 @@ r:
   - 3.5.2
 
 dist: xenial
-sudo: true
 
 cache:
   packages: true
