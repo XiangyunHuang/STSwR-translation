@@ -36,15 +36,10 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - sourceline: ppa:opencpu/imagemagick
-      - sourceline: ppa:git-core/ppa
-      - sourceline: ppa:jeroen/libgit2
     packages:
       - ghostscript
-      - imagemagick
       - optipng
       - g++-8
-      - libgit2-dev
       - libudunits2-dev
       - libproj-dev
       - libgeos-dev
