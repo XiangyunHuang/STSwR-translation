@@ -17,10 +17,16 @@ branches:
     - release
     - stable
 
-pandoc_version: 2.3.1
+pandoc_version: 2.7.2
+
+env:
+  global:
+    - TZ="Asia/Shanghai"
+    - MAKEFLAGS="-j 2"
+    - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 
 git:
-  depth: 5
+  depth: 10
   submodules: false
   
 repos:
@@ -29,36 +35,33 @@ repos:
 addons:
   apt:
     sources:
+      - ubuntu-toolchain-r-test
       - sourceline: ppa:opencpu/imagemagick
       - sourceline: ppa:git-core/ppa
+      - sourceline: ppa:jeroen/libgit2
     packages:
       - ghostscript
       - imagemagick
       - optipng
-      # git2r
+      - g++-8
       - libgit2-dev
-      # for sf rgdal
       - libudunits2-dev
       - libproj-dev
       - libgeos-dev
       - libgdal-dev
 
 before_install:
-  - nvm install stable
+  - mkdir -p ~/.R/
+  - echo "CXXFLAGS += -Wno-ignored-attributes" >> ~/.R/Makevars
+  - echo "CXX14 = g++-8 -fPIC -flto=2" >> ~/.R/Makevars
+  - echo "CXX14FLAGS = -mtune=native -march=native -Wno-unused-variable -Wno-unused-function -Wno-unused-local-typedefs -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-attributes -O3" >> ~/.R/Makevars
   - npm install netlify-cli -g
-#  - curl -fLo /tmp/tinytex.tar.gz https://travis-bin.yihui.name/tinytex.tar.gz
-#  - tar -xzf /tmp/tinytex.tar.gz -C $HOME
-#  - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
-#  - tlmgr install $(cat latex/TeXLive.pkgs | tr '\n' ' ') || true
 
-  
 before_script:
- # - Rscript -e 'tinytex::tlmgr_install(readLines("latex/TeXLive.pkgs"))'
   - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE)'
 
 script:
   - Rscript -e 'bookdown::render_book("index.Rmd")'
-
 
 deploy:
   - provider: script
