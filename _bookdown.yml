@@ -20,5 +20,10 @@ new_session: yes
 
 rmd_files: 
   - "index.Rmd"
-
+  - "Aacknowledgments.Rmd"
+  - "Preface.Rmd"
+  - "01-Introdction-to-Spatio-Temporal-Statistics.Rmd"
+  
+  
+  
   - "96-references.Rmd"
