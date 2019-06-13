@@ -22,7 +22,7 @@ pandoc_version: 2.7.2
 env:
   global:
     - TZ="Asia/Shanghai"
-    - MAKEFLAGS="-j 2"
+    - MAKEFLAGS="-j 4"
     - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 
 git:
