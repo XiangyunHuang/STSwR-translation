@@ -15,7 +15,7 @@ pre code {
 
 /* Sidebar formating --------------------------------------------*/
 
-.sidebar, .warning {
+.sidebar {
   border: 1px solid #ccc;
   border-left-width: 5px;
   border-radius: 5px;
@@ -23,20 +23,65 @@ pre code {
   margin: 1em 0;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal div.warning > :first-child,
+.rmdwarning {
+  border: 1px solid #EA4335;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.rmdnote {
+  border: 1px solid #FBBC05;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.rmdtip {
+  border: 1px solid #34A853;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
+.book .book-body .page-wrapper .page-inner section.normal div.rmdwarning > :first-child,
+.book .book-body .page-wrapper .page-inner section.normal div.rmdnote > :first-child,
+.book .book-body .page-wrapper .page-inner section.normal div.rmdtip > :first-child,
 .book .book-body .page-wrapper .page-inner section.normal div.sidebar > :first-child {
   margin-top: 0;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal div.warning > :last-child,
+.book .book-body .page-wrapper .page-inner section.normal div.rmdwarning > :last-child,
+.book .book-body .page-wrapper .page-inner section.normal div.rmdnote > :last-child,
+.book .book-body .page-wrapper .page-inner section.normal div.rmdtip > :last-child,
 .book .book-body .page-wrapper .page-inner section.normal div.sidebar > :last-child {
   margin-bottom: 0;
 }
 
-div.warning::before {
+div.rmdwarning::before {
   display: block;
   content: "警告";
-  color: red;
+  color: #EA4335;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}
+
+div.rmdnote::before {
+  display: block;
+  content: "注意";
+  color: #FBBC05;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}
+
+div.rmdtip::before {
+  display: block;
+  content: "提示";
+  color: #34A853;
   font-size: 1.1em;
   font-weight: bold;
   margin-bottom: 0.25em;
@@ -44,7 +89,7 @@ div.warning::before {
 
 .todo {
   display: block;
-  border: 1px solid #ccc;
+  border: 1px solid #4285f4;
   border-left-width: 5px;
   border-radius: 5px;
   padding: 0.5em 1em;
@@ -54,7 +99,11 @@ div.warning::before {
 .todo::before {
   content: "TO DO: ";
   font-weight: bold;
-  color: blue;
+  color: #4285f4;
+}
+
+.flushright {
+  text-align: right;
 }
 
 blockquote > p:last-child {

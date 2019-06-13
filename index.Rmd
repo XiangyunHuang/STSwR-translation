@@ -21,23 +21,22 @@ Christopher K. Wikle, Andrew Zammit-Mangion 和 Noel Cressie 的合著的新书�
 
 ## 编辑约定 {#conventions .unnumbered}
 
+::: sidebar
+这是一段普通的说明文本
+:::
+
 [要做的事情还有很多]{.todo}
 
-::: sidebar
-**注意**
-
-这是一个提醒
+::: rmdnote
+这是一个注意事项
 :::
 
 
-::: sidebar
-**提示**
-
+::: rmdtip
 这是一个提示
 :::
 
-
-::: warning
+::: rmdwarning
 在未获得授权的情况下，禁止
 :::
 
@@ -50,6 +49,15 @@ Christopher K. Wikle, Andrew Zammit-Mangion 和 Noel Cressie 的合著的新书�
 1. 有序列表
 1. 有序列表
 1. 有序列表
+
+## 致谢 {#acknowledgments .unnumbered}
+
+感谢 XX 壮士
+
+```{block2, type='flushright', html.tag='p'}
+张三  
+于北京XX园
+```
 
 
 ## 软件信息 {#session-info .unnumbered}
