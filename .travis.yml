@@ -24,7 +24,7 @@ before_install:
   - chmod +x ./_build.sh
 
 script:
-  - docker run --rm ${DOCKER_REPO_FEDORA30} xvfb-run Rscript -e "xfun::session_info(.packages(T))"
+  - docker run --rm ${DOCKER_REPO_FEDORA30} Rscript -e "sessionInfo(.packages(T))"
   - docker run --rm ${DOCKER_REPO_FEDORA30} Rscript -e "parallel::detectCores()"
   - docker run --rm --name "book" -u root -v "/${PWD}://home/docker/workspace" ${DOCKER_REPO_FEDORA30} sh ./_build.sh
 

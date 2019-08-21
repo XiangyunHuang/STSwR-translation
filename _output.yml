@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: style.css
   split_by: rmd
+  dev: "svglite"
   config:
     toc:
       before: |
@@ -25,4 +26,4 @@ bookdown::pdf_book:
   keep_tex: yes
   pandoc_args: ["--top-level-division=chapter", "--lua-filter=sidebar.lua"]
   quote_footer: ["\\hspace*{\\fill} ", ""]
-bookdown::epub_book: default
+  dev: "cairo_pdf"

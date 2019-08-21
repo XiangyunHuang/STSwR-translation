@@ -1,4 +1,3 @@
-book_filename: "STSwR-translation"
 delete_merged_file: true
 language:
   label:
@@ -17,7 +16,7 @@ language:
 
 output_dir: _book
 new_session: yes 
-
+before_chapter_script: ["_common.R"]
 rmd_files: 
   - "index.Rmd"
   - "Aacknowledgments.Rmd"
