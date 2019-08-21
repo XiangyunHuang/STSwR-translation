@@ -10,11 +10,7 @@ is_html <- identical(knitr::opts_knit$get("rmarkdown.pandoc.to"), "html")
 
 knitr::opts_chunk$set(
   fig.align = "center",
-  cache = TRUE,
-  fig.showtext = TRUE,
-  dev.args = list(type = "cairo", bg = "transparent"),
-  tidy = "formatR",
-  tidy.opts = list(blank = FALSE, width.cutoff = 79)
+  cache = TRUE
 )
 
 if (is_latex) {

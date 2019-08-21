@@ -39,7 +39,7 @@ rsconnect/
 _book/
 _bookdown_files/
 packages.bib
-STSwR-translation.rds
+_main.rds
 
 # MacOS
 .DS_Store
